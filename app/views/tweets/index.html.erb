@@ -1,2 +1,16 @@
-<h1>Tweets#index</h1>
-<p>Find me in app/views/tweets/index.html.erb</p>
+<%= simple_form_for @tweet do |f| %>
+  <% if @tweet.errors.any? %>
+    <div id="error_explanation" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+      <h2><%= pluralize(@tweet.errors.count, "error") %> prohibited this tweet from being saved:</h2>
+
+      <ul>
+      <% @tweet.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+
+    </div>
+  <% end %>
+  <%= f.input :content %>
+  <%= f.submit %>
+<% end %>
