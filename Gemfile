@@ -46,6 +46,10 @@ gem "rspec-rails"
 
 gem 'simple_form'
 
+gem "letter-opener"
+
+gem "capybara"
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
