@@ -13,6 +13,7 @@ class TweetsController < ApplicationController
         format.html do
           flash[:tweet_errors] = @tweet.errors.full_messages
           redirect_to root_path
+        end
       end
     end
   end
@@ -20,10 +21,13 @@ class TweetsController < ApplicationController
   def destroy
   end
 
+  def update
+  end
+
   def edit
   end
 
   def tweet_params
-    params.require(:tweet).permit(:body)
+    params.require(:tweet).permit(:body, :report_counter)
   end
 end
