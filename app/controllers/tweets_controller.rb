@@ -1,4 +1,6 @@
 class TweetsController < ApplicationController
+  before_action :authenticate_user!, only: %i[create destroy update edit]
+
   def index
     @tweet = Tweet.new
     @tweets = Tweet.all.order(created_at: :asc)
